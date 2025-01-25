@@ -1,0 +1,109 @@
+Inversion of Control (IoC) is a fundamental principle of the Spring Framework. It is a design principle where the control of object creation, configuration, and management is handed over to the framework rather than being managed manually by the developer.
+
+Create, Hold and inject Object
+Key Idea Behind IoC
+Traditionally, a program controls the flow of execution and the creation of objects within its codebase. In IoC, this control is inverted, meaning:
+
+The framework takes responsibility for creating and managing objects.
+Dependencies of an object are injected by the framework, not created by the object itself.
+How IoC Works in Spring
+In the Spring Framework, IoC is implemented through the IoC Container. The container:
+
+Reads the configuration (XML, annotations, or Java-based configuration).
+Creates objects (called beans) as defined in the configuration.
+Manages the lifecycle of these beans.
+Injects the dependencies required by these beans automatically.
+Types of Dependency Injection (DI) in IoC
+IoC in Spring is primarily achieved through Dependency Injection (DI). There are two main types:
+-----------------------------------------------------------------------------------------------------------------
+Constructor Injection:
+
+Dependencies are injected through the constructor.
+Example:
+
+public class Service {
+    private Repository repository;
+
+    // Dependency is injected via the constructor
+    public Service(Repository repository) {
+        this.repository = repository;
+    }
+}
+Setter Injection:
+
+Dependencies are injected using setter methods.
+Example:
+java
+Copy
+Edit
+public class Service {
+    private Repository repository;
+
+    // Dependency is injected via the setter method
+    public void setRepository(Repository repository) {
+        this.repository = repository;
+    }
+}
+Spring IoC Container
+The Spring IoC container is responsible for managing the lifecycle of beans and resolving their dependencies. There are two main types of IoC containers in Spring:
+
+BeanFactory:
+
+Basic container that provides fundamental IoC support.
+Lightweight and suitable for simple applications.
+ApplicationContext: extends BeanFactory =/- represents IOC- interface
+
+A more advanced container with features like AOP, event propagation, and internationalization.
+Common implementations:
+ClassPathXmlApplicationContext: Reads configuration from an XML file on the classpath.
+AnnotationConfigApplicationContext: Uses annotations or Java-based configuration.
+FileSystemXMLApplicationContext: CONFIG FILES FROM File system
+Benefits of IoC
+Loose Coupling:
+Classes are not tightly coupled, making the code more modular and testable.
+Improved Testability:
+Dependencies can be easily mocked or swapped during unit testing.
+Ease of Configuration:
+Centralized configuration (XML, annotations, or Java-based) simplifies managing dependencies.
+Reusable Components:
+Makes it easier to reuse components across different applications.
+Example of IoC in Spring
+Using Annotation-Based Configuration:
+
+// Define a service
+@Component
+public class MyService {
+    public void performTask() {
+        System.out.println("Task performed!");
+    }
+}
+
+// Define a dependent class
+@Component
+public class MyController {
+    private final MyService myService;
+
+    @Autowired // Spring will inject MyService here
+    public MyController(MyService myService) {
+        this.myService = myService;
+    }
+
+    public void execute() {
+        myService.performTask();
+    }
+}
+
+// Main application
+@Configuration
+@ComponentScan(basePackages = "com.example")
+public class AppConfig {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        MyController controller = context.getBean(MyController.class);
+        controller.execute();
+    }
+}
+In this example:
+
+Spring's IoC container manages the creation of MyService and MyController.
+It automatically injects the MyService dependency into MyController.
