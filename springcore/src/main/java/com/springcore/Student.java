@@ -1,4 +1,4 @@
-package com.spring.core.springcore;
+package com.springcore;
 
 public class Student {
 	private int studentId;

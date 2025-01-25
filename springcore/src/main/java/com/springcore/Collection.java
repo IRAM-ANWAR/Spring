@@ -1,4 +1,4 @@
-package com.spring.core.springcore;
+package com.springcore;
 
 import java.util.List;
 import java.util.Map;
