@@ -9,40 +9,39 @@
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define a bean for the POJO -->
-    <!--Setter Injection-->
+	<!--CONSTRUCTOR-->
    
-	  <bean id="collection" class="com.spring.core.springcore.Collection">
-        <property name="list">
-        	<list>
+	  <bean id="collection1" class="com.spring.core.springcore.Collection">
+	  <constructor-arg>
+	  	<list>
         		<value>element1</value>
         		<value>element2</value>
         		<value>element1</value>
         	</list>
-        </property>
-        <property name="set"> 
+	  </constructor-arg>
+        <constructor-arg>
         	<set>
         		<value>element1</value>
         		<value>element2</value>
         		<value>element3</value>
         	</set>
-        </property>
-        <property name="map">
-        	<map>
+        
+        </constructor-arg>
+       <constructor-arg>
+       <map>
         	<entry key="key1" value="value1"/>
         	</map>
-        </property>
+       </constructor-arg>
     </bean>
     
-     <bean id="studentBean" class="com.spring.core.springcore.Student">
-        <property name="studentId" value="22344" />
-        <property name="studentName" value="Iram Anwar" /> <!--value as a attribute,-->
-        <property name="studentAddress" value="XYZ" />
-        <property name="collection">
-        	<ref bean="collection"/>
-        </property>
+     <bean id="studentObj" class="com.spring.core.springcore.Student">
+        <constructor-arg value="22344" type="int"/>
+          <constructor-arg value="Ani" index="1"/>
+            <constructor-arg value="XYZ"/>
+            <constructor-arg ref="collection1"></constructor-arg>
     </bean>
     
      <bean id="studentBean2" class="com.spring.core.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
 		
-		
+	
 </beans>

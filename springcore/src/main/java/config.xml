@@ -9,10 +9,40 @@
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define a bean for the POJO -->
-    <bean id="studentBean" class="com.spring.core.springcore.Student">
-        <property name="studentId" value="22344" />
-        <property name="studentName" value="Iram Anwar" />
-        <property name="studentAddress" value="XYZ" />
+    <!--Setter Injection-->
+   
+	  <bean id="collection" class="com.spring.core.springcore.Collection">
+        <property name="list">
+        	<list>
+        		<value>element1</value>
+        		<value>element2</value>
+        		<value>element1</value>
+        	</list>
+        </property>
+        <property name="set"> 
+        	<set>
+        		<value>element1</value>
+        		<value>element2</value>
+        		<value>element3</value>
+        	</set>
+        </property>
+        <property name="map">
+        	<map>
+        	<entry key="key1" value="value1"/>
+        	</map>
+        </property>
     </bean>
-
+    
+     <bean id="studentBean" class="com.spring.core.springcore.Student">
+        <property name="studentId" value="22344" />
+        <property name="studentName" value="Iram Anwar" /> <!--value as a attribute,-->
+        <property name="studentAddress" value="XYZ" />
+        <property name="collection">
+        	<ref bean="collection"/>
+        </property>
+    </bean>
+    
+     <bean id="studentBean2" class="com.spring.core.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
+		
+		
 </beans>

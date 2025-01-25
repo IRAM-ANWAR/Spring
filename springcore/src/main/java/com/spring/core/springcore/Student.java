@@ -4,17 +4,23 @@ public class Student {
 	private int studentId;
 	private String studentName;
 	private String studentAddress;
+	private Collection collection;
 
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int studentId, String studentName, String studentAddress) {
+	public Student(int studentId, String studentName, String studentAddress, Collection collection) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
 		this.studentAddress = studentAddress;
+		this.collection = collection;
+	}
+
+	public Collection getCollection() {
+		return this.collection;
 	}
 
 	public String getStudentAddress() {
@@ -27,6 +33,10 @@ public class Student {
 
 	public String getStudentName() {
 		return this.studentName;
+	}
+
+	public void setCollection(Collection collection) {
+		this.collection = collection;
 	}
 
 	public void setStudentAddress(String studentAddress) {
@@ -44,7 +54,7 @@ public class Student {
 	@Override
 	public String toString() {
 		return "Student [studentId=" + this.studentId + ", studentName=" + this.studentName + ", studentAddress="
-				+ this.studentAddress + "]";
+				+ this.studentAddress + ", collection=" + this.collection + "]";
 	}
 
 }
