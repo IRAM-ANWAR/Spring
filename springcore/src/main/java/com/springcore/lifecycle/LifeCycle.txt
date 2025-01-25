@@ -1,0 +1,10 @@
+Two important methods for every bean:-
+public void init()
+public void destroy()- name can be changed
+
+object creation-> value set -> init() --> read and use the bean  --> destroy()  --> destroy the bean
+configuration -> using xml/ spring interfaces / java annotation
+
+Interfaces- InitializingBean, DisposableBean
+
+@PostConstruct, @PreDestroy

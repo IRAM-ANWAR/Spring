@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Windows>Preferences>maven>download javadoc-->
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans 
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd">
+                           
+    <!-- Annotation configuration -->
+    <context:annotation-config />
 
-     <bean id="samosaObj" name="s1" class="com.springcore.lifecycle.Samosa"
-     init-method="init" destroy-method="destroy">
+    <!-- Define beans -->
+    <bean id="samosaObj" class="com.springcore.lifecycle.Samosa"
+          init-method="init" destroy-method="destroy">
         <property name="price" value="10" />
     </bean>
+
+    <bean id="pepsiObj" class="com.springcore.lifecycle.Pepsi">
+        <property name="price" value="10" />
+    </bean>
+
+    <bean id="cokeObj" class="com.springcore.lifecycle.Coke">
+        <property name="price" value="10" />
+    </bean>
+
 </beans>
