@@ -36,15 +36,18 @@ Beans: Provides support for managing beans using DI.
 Core: Provides the foundation, including IoC and DI.
 Context: A configuration framework that builds on the Core and Beans modules, providing access to objects in a manner similar to a JNDI registry.
 Expression Language (SpEL): A powerful language for querying and manipulating objects at runtime.
+                            Supports parsing and executing expression
+                        #{expression} - class, variable, methods, constructors, objects, symbols(char,numerics,operators, keywords,special symbols with return value)
+
 b. AOP and Instrumentation , Aspect, Messaging
-AOP: Supports aspect-oriented programming by enabling modularization of cross-cutting concerns.
-Instrumentation: Provides support for class instrumentation and classloading.
+          AOP: Supports aspect-oriented programming by enabling modularization of cross-cutting concerns.
+          Instrumentation: Provides support for class instrumentation and classloading.
 c. Data Access/Integration
-JDBC: Simplifies database interaction by reducing boilerplate code.
-ORM: Integrates with ORM frameworks like Hibernate, JPA, and others.
-JMS: Java Messaging Service
-OXM: Object XML Mapping
-Transactions: Provides declarative transaction management.
+       JDBC: Simplifies database interaction by reducing boilerplate code.
+       ORM: Integrates with ORM frameworks like Hibernate, JPA, and others.
+        J MS: Java Messaging Service
+        OXM: Object XML Mapping
+         Transactions: Provides declarative transaction management.
 d. Web
 Web: Includes functionality to create web applications.
 Web MVC: A Model-View-Controller (MVC) framework for building web applications.

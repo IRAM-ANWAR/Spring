@@ -1,26 +1,24 @@
-package com.springcore.stereotype;
+package com.springcore.bean_scope;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
-public class Student {
+public class Teacher {
 
 	@Value("D")
 	private String name;
 	@Value("Goa")
 	private String city;
 
-	@Value("#{friends}") // id of bean -> expression language(SPeL)
+	@Value("#{friends}")
 	private List<String> friends;
 
-	public Student() {
+	public Teacher() {
 		super();
 	}
 
-	public Student(String name, String city, List<String> friends) {
+	public Teacher(String name, String city, List<String> friends) {
 		super();
 		this.name = name;
 		this.city = city;
@@ -45,7 +43,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [name=" + this.name + ", city=" + this.city + ", friends=" + this.friends + "]";
+		return "Teacher [name=" + this.name + ", city=" + this.city + ", friends=" + this.friends + "]";
 	}
 
 }

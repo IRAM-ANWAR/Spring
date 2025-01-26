@@ -1,11 +1,13 @@
-package com.springcore.stereotype;
+package com.springcore.bean_scope;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class Student {
 
 	@Value("D")
@@ -13,7 +15,7 @@ public class Student {
 	@Value("Goa")
 	private String city;
 
-	@Value("#{friends}") // id of bean -> expression language(SPeL)
+	@Value("#{friends}")
 	private List<String> friends;
 
 	public Student() {
