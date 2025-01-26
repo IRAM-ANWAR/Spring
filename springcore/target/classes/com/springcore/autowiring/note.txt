@@ -1,0 +1,18 @@
+Autowiring, also known as automatic wiring, is a feature of the Spring Framework that automatically injects dependencies into Java classes. It's a part of 
+Spring's inversion of control (IoC) container. 
+How it works ---
+Autowiring matches the types of properties, constructor arguments, or method arguments of the beans.
+It eliminates the need for manual configuration.
+It reduces the amount of XML configuration.
+It makes the code more readable.
+Benefits 
+It simplifies dependency injection.
+It reduces boilerplate code.
+It allows developers to focus on writing business logic.
+It improves the modularity, testability, and maintainability of Spring applications.
+Types of autowiring 
+byName: Injects the object dependency according to the name of the bean.
+byType: Injects the object dependency according to type.
+constructor: Injects the dependency by calling the constructor of the class.
+Annotation 
+The @Autowired annotation is used to enable autowiring. It can be applied to variables, methods, and constructors.

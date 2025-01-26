@@ -11,7 +11,7 @@
     <!-- Define a bean for the POJO -->
 	<!--CONSTRUCTOR-->
    
-	  <bean id="collection1" class="com.spring.core.springcore.Collection">
+	  <bean id="collection1" class="com.springcore.Collection">
 	  <constructor-arg>
 	  	<list>
         		<value>element1</value>
@@ -34,14 +34,14 @@
        </constructor-arg>
     </bean>
     
-     <bean id="studentObj" class="com.spring.core.springcore.Student">
+     <bean id="studentObj" class="com.springcore.Student">
         <constructor-arg value="22344" type="int"/>
           <constructor-arg value="Ani" index="1"/>
             <constructor-arg value="XYZ"/>
             <constructor-arg ref="collection1"></constructor-arg>
     </bean>
     
-     <bean id="studentBean2" class="com.spring.core.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
+     <bean id="studentBean2" class="com.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
 		
 	
 </beans>

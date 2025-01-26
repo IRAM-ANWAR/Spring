@@ -7,11 +7,57 @@
                            http://www.springframework.org/schema/beans/spring-beans.xsd
                            http://www.springframework.org/schema/context 
                            http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--
+		
+		1. <beans>
+The root tag <beans> defines the configuration file for the Spring application context.
+All Spring-managed objects (beans) are defined within this tag.
+2. xmlns Attributes
+These attributes specify the XML namespaces being used in this file. Each namespace corresponds to a set of XML tags or rules provided by Spring.
+
+Examples:
+xmlns="http://www.springframework.org/schema/beans"
+
+This is the default namespace for Spring's core bean configuration.
+It allows you to define beans and their properties.
+xmlns:context="http://www.springframework.org/schema/context"
+
+This namespace is used for advanced Spring features, like enabling annotation-based configuration or scanning for components in the package.
+xmlns:p="http://www.springframework.org/schema/p"
+
+This is a shortcut namespace for setting bean properties using attributes instead of <property> tags.
+3. xsi:schemaLocation
+This maps the namespaces to the actual XML Schema files (.xsd), which define the rules for valid XML.
+Think of .xsd files as a guide that explains what elements (tags) you can use and how they should be structured.
+In This Example:
+xml
+Copy
+Edit
+xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+http://www.springframework.org/schema/beans: The namespace for the core Spring configuration tags.
+
+http://www.springframework.org/schema/beans/spring-beans.xsd: The corresponding schema file that defines the structure for the "beans" namespace.
+
+http://www.springframework.org/schema/context: The namespace for the Spring context configuration tags.
+
+http://www.springframework.org/schema/context/spring-context.xsd: The corresponding schema file for the "context" namespace.
+
+Essentially, these lines tell Spring how to validate the XML file and which tags you’re allowed to use.
+
+In Short:
+The xmlns attributes tell Spring which features you're using.
+The xsi:schemaLocation maps the features (namespaces) to their rules (schemas).
+This configuration file allows you to define and manage beans (objects) in a Spring application.
+	-->
 
     <!-- Define a bean for the POJO -->
     <!--Setter Injection-->
    
-	  <bean id="collection" class="com.spring.core.springcore.Collection">
+	  <bean id="collection" class="com.springcore.Collection">
         <property name="list">
         	<list>
         		<value>element1</value>
@@ -33,7 +79,7 @@
         </property>
     </bean>
     
-     <bean id="studentBean" class="com.spring.core.springcore.Student">
+     <bean id="studentBean" class="com.springcore.Student">
         <property name="studentId" value="22344" />
         <property name="studentName" value="Iram Anwar" /> <!--value as a attribute,-->
         <property name="studentAddress" value="XYZ" />
@@ -42,7 +88,7 @@
         </property>
     </bean>
     
-     <bean id="studentBean2" class="com.spring.core.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
+     <bean id="studentBean2" class="com.springcore.Student" p:studentId="234" p:studentName="ANish" p:studentAddress="XYZ"/><!--p schema-->
 		
 		
 </beans>

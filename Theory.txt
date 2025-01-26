@@ -8,6 +8,25 @@ Dependency Injection (DI): Spring promotes loose coupling by allowing dependenci
 Aspect-Oriented Programming (AOP): It enables separating cross-cutting concerns (like logging, security, and transaction management) from the core business logic.
 Inversion of Control (IoC): Instead of the application controlling object creation, the Spring IoC container takes care of creating and managing objects.
 
+
+Inversion Of Control Vs Dependency Injection:-
+---------------------------------------------
+Inversion of Control (IoC) is a broader design principle where a framework or external entity manages the flow of control in an application, while Dependency Injection (DI) is a specific implementation technique that allows a component to receive its dependencies from an external source, essentially acting as a way to achieve IoC; meaning, DI is a concrete way to implement IoC. 
+Key points to remember: 
+IoC as a principle:
+Inversion of Control is a high-level design principle that focuses on who controls the application's execution flow, where the responsibility is shifted to a framework or container instead of the application itself. 
+DI as a pattern:
+Dependency Injection is a specific design pattern used to implement IoC by providing dependencies to a class through its constructor or setter methods, allowing for greater flexibility in choosing which implementations to use. 
+Example: 
+IoC:
+A framework dynamically decides which component to call based on configuration, without the application explicitly managing the selection. 
+DI:
+Instead of creating its own database connection object, a class receives a pre-configured database connection object as a parameter when it is instantiated. 
+Benefits of both: 
+Loose Coupling:
+Both IoC and DI promote loose coupling between components, making code more modular, reusable, and easier to test. 
+Flexibility:
+By injecting dependencies, developers can easily swap different implementations of a dependency without affecting the dependent class
 -------------------------------------------------------------------------------------------------------------------
 2. Key Modules of the Spring Framework
 The Spring Framework is divided into several modules:

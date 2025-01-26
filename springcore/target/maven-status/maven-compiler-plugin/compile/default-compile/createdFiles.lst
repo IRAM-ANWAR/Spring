@@ -1,0 +1,15 @@
+com\springcore\autowiring\annotation\Test.class
+com\springcore\autowiring\annotation\Employee.class
+com\springcore\lifecycle\Pepsi.class
+com\springcore\autowiring\Employee.class
+com\springcore\Student.class
+com\springcore\autowiring\annotation\Address.class
+com\springcore\Collection.class
+com\springcore\autowiring\Address.class
+com\springcore\lifecycle\Coke.class
+com\springcore\standalone\collection\Person.class
+com\springcore\standalone\collection\Test.class
+com\springcore\App.class
+com\springcore\lifecycle\Samosa.class
+com\springcore\lifecycle\Test.class
+com\springcore\autowiring\Test.class

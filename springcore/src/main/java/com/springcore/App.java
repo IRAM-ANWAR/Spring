@@ -13,6 +13,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
 		Student student = (Student) context.getBean("studentBean");
 		System.out.println(student);
+		System.out.println(student.getCollection().getList().getClass());
 
 		ApplicationContext context2 = new ClassPathXmlApplicationContext("config_constructor.xml");
 		Student student2 = (Student) context2.getBean("studentObj");
