@@ -7,5 +7,32 @@
     <packaging>pom</packaging>
     <modules>
         <module>springcore</module>
+        <module>springjdbc</module>
     </modules>
+    
+   
+    <dependencies>
+       <dependency>
+            <groupId>org.springframework</groupId>
+    		<artifactId>spring-core</artifactId>
+    		<version>6.2.1</version>
+		</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+    		<groupId>org.springframework</groupId>
+    		<artifactId>spring-context</artifactId>
+    		<version>6.2.1</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
+<!-- Earlier was part of JavaEE upto Java 8, javaEE depreceted in java9-->
+<dependency>
+    <groupId>jakarta.annotation</groupId>
+    <artifactId>jakarta.annotation-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+    </dependencies>
+    
+    
 </project>
