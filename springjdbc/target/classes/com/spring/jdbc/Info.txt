@@ -1,0 +1,2 @@
+JdbcTemplate - methods to operate with database
+Datasource interface -> DriverManagerDataSource( driver classname, url,password,username)
