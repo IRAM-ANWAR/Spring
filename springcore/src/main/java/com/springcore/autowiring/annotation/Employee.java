@@ -1,6 +1,5 @@
 package com.springcore.autowiring.annotation;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Employee {
@@ -13,7 +12,6 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Autowired
 	public Employee(@Qualifier("addressObj") Address address) {
 		super();
 		this.address = address;
